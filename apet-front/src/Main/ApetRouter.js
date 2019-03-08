@@ -1,14 +1,19 @@
 import React, {Component} from 'react';
-import {Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter, Router, Switch, Route} from 'react-router-dom';
+import ApetMenu from './ApetMenu';
+import AddApet from './AddApet';
+import ApetHome from './ApetHome';
 
-class ApetRouter extends Component {
+export default class ApetRouter extends Component {
     render() {
         return (
-            <Router>
+            <BrowserRouter>
                 <Switch>
-                                        <Route/>
+                    <Route path='/' exact={true} component={ApetHome}/>
+                    <Route path='/all' exact={true} component={ApetMenu}/>
+                    <Route path='/add' exact={true} component={AddApet}/>
                 </Switch>
-            </Router>
+            </BrowserRouter>
         )
     }
 }

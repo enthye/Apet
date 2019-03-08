@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
-import ApetNavbar from './Main/ApetNavbar'
+import ApetHome from './Main/ApetHome'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ApetRouter from "./Main/ApetRouter";
 
-ReactDOM.render(<ApetNavbar/>, document.getElementById('root'));
+ReactDOM.render(<ApetRouter/>, document.getElementById('root'));
