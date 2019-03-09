@@ -11,14 +11,14 @@ export default class PetsMenu extends Component {
     }
 
     // get all pet data from database via Spring controller
-    async componentDidMount() {
-        const response = await fetch('/apet/all');
-        const body = await response.json();
-        this.setState({pets: body});
+   componentDidMount() {
+        fetch('/api/all')
+            .then(response => response.json())
+            .then(data => this.setState({pets:data}));
     }
 
     delete = (id) => {
-        fetch(`/apet/delete?id=${id}`);
+        fetch(`/api/delete?id=${id}`);
         let updatedPets = [...this.state.pets]
             .filter(i => i.id !== id);
         this.setState({pets: updatedPets});

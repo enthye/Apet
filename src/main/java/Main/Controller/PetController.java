@@ -1,12 +1,12 @@
-package Controller;
+package Main.Controller;
 
-import Model.Pet;
-import Model.PetRepository;
+import Main.Model.Pet;
+import Main.Model.PetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/apet")
+@RequestMapping("/api")
 public class PetController {
     private PetRepository petRepository;
 

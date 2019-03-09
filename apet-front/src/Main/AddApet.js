@@ -27,7 +27,7 @@ export default class AddApet extends Component {
     async handleSubmit(event) {
         event.preventDefault();
         const item = this.state;
-        await fetch(`/apet/add?name=${item.name}`);
+        await fetch(`/api/add?name=${item.name}`);
         this.props.history.push('/all');
     }
 
