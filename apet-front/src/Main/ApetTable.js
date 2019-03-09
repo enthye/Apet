@@ -10,6 +10,7 @@ export default class ApetTable extends Component {
                     <td>{pet.id}</td>
                     <td>{pet.name}</td>
                     <td>{pet.hitpoints}</td>
+                    <td>{pet.birthday}</td>
                     <td><Button color="success"
                                 onClick={() => this.props.feed(pet.id)}>
                         Feed</Button>
@@ -32,6 +33,7 @@ export default class ApetTable extends Component {
                         <th>Id</th>
                         <th>Pet Name</th>
                         <th>Hitpoints</th>
+                        <th>Birthday</th>
                         <th>Actions</th>
                     </tr>
                     </thead>
@@ -43,13 +45,5 @@ export default class ApetTable extends Component {
                 </Table>
             </div>
         );
-    }
-
-    delete = (id) => {
-        console.log(id);
-        fetch(`/apet/delete?id=${id}`);
-        let updatedPets = [...this.props.pets]
-            .filter(i => i.id !== id);
-        this.setState({pets: updatedPets});
     }
 }

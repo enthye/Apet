@@ -24,10 +24,10 @@ export default class AddApet extends Component {
         this.setState({name: value});
     }
 
-    async handleSubmit(event) {
+    handleSubmit(event) {
         event.preventDefault();
         const item = this.state;
-        await fetch(`/api/add?name=${item.name}`);
+        fetch(`/api/add?name=${item.name}`);
         this.props.history.push('/all');
     }
 
